@@ -35,7 +35,8 @@ const pizzaPriceOption = { regular: "", medium: "", large: "" };
     }
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch("api/createFoodData", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const response = await fetch(`${apiUrl}/createFoodData`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(foodData),

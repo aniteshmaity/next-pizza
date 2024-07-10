@@ -1,6 +1,8 @@
 export async function orderData(orders) {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
     try {
-        const response = await fetch("/api/ordersData", {
+        const response = await fetch(`${apiUrl}/ordersData`, {
             method: "POST",
             headers:{
                 "Content-Type" : "application/json"

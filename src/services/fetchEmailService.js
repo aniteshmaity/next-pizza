@@ -1,6 +1,8 @@
 
 export const fetchUserData = async () => {
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
     if (typeof window === 'undefined') {
         throw new Error('localStorage is not available on the server side');
     }
@@ -10,7 +12,7 @@ export const fetchUserData = async () => {
       throw new Error('Token not found');
     }
   
-    const response = await fetch('/api/current', {
+    const response = await fetch(`${apiUrl}/current`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`

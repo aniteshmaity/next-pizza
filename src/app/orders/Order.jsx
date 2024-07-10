@@ -15,7 +15,8 @@ const Order = () => {
   const [loading, setLoading] = useState(true);
   const fetchData = async (userEmail) => {
     try {
-      const response = await fetch('api/myOrderData', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const response = await fetch(`${apiUrl}/myOrderData`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
