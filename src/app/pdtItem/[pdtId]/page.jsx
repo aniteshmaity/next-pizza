@@ -5,7 +5,8 @@ import React from 'react'
 
 
 const getItem = async (productid) => {
-  const res = await fetch(`/api/alldata/${productid}`);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${apiUrl}/alldata/${productid}`);
   console.log("data------", res);
   if (!res.ok) {
     throw new Error('Failed to fetch data');
