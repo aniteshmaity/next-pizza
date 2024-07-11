@@ -20,15 +20,16 @@ export default function RootLayout({ children }) {
      
       <body>
       <ThemeProvider attribute="class">
-      <AuthProvider>
+     
         <CartProvider>
+        <AuthProvider>
           <ToastContainer />
         <Navbar/>
         {children}
         <Footer/>
-       
-        </CartProvider>
         </AuthProvider>
+        </CartProvider>
+      
         </ThemeProvider>
         
         </body>

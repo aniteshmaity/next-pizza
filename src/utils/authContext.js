@@ -36,7 +36,10 @@ const AuthProvider = ({ children }) => {
       }
     };
 
-    fetchTokenData();
+    // Ensure this effect runs only on the client side
+    if (typeof window !== 'undefined') {
+      fetchTokenData();
+    }
   }, [token]);
 
 
