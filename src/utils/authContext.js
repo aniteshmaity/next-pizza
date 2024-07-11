@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
     const fetchTokenData = async () => {
       if (token) {
         try {
-          const tokenData = await fetchUserData();
+          const tokenData = await fetchUserData(token);
           setEmail(tokenData.email);
         } catch (error) {
           console.error("Error fetching user data:", error);
