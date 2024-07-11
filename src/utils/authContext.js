@@ -34,6 +34,9 @@ const AuthProvider = ({ children }) => {
           logout(); // Optionally, log out the user on error
         }
       }
+      else{
+        console.log("go to home");
+      }
     };
 
     // Ensure this effect runs only on the client side
